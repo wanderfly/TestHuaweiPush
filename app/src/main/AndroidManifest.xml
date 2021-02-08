@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kevin.testhuaweipush">
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/menu"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/menu"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TestHuaweiPush">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="my_appid" />
+        <service
+            android:name=".ReceivePushMsgService"
+            android:exported="false">
+            <intent-filter >
+                <action  android:name="com.huawei.push.action.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
